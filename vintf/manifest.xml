@@ -308,6 +308,11 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.citsensorservice</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.1::ICitSensorService/default</fqname>
+    </hal>
     <!-- FX -->
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.fx.tunnel</name>
@@ -328,5 +333,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-
 </manifest>
