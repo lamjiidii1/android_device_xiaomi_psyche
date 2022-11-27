@@ -11,3 +11,7 @@ get_prop(hal_sensors_default, vendor_adsprpc_prop)
 
 # Allow Sensors hal to r/w touchpanel nodes
 r_dir_file(vendor_sensors, vendor_sysfs_graphics)
+
+# Audio Data Files
+allow hal_sensors_default vendor_audio_data_file:dir {write add_name search};
+allow hal_sensors_default vendor_audio_data_file:file {read write create getattr append open};
