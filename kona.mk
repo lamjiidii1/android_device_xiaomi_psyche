@@ -264,6 +264,10 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
+# IRSC
+PRODUCT_PACKAGES += \
+    sec_config
+
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
