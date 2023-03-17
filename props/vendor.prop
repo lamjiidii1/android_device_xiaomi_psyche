@@ -212,6 +212,9 @@ vendor.display.use_smooth_motion=0
 ro.vendor.display.paneltype=2
 vendor.display.defer_fps_frame_count=2
 
+# Display HDR10
+vendor.display.enable_hdr10_gpu_target=1
+
 # Display Refresh Rate
 ro.surface_flinger.set_idle_timer_ms?=4000
 ro.surface_flinger.set_touch_timer_ms?=4000
