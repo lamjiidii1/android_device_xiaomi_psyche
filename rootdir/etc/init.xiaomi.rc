@@ -96,6 +96,13 @@ service vendor.btmac-sh /vendor/bin/init.mi.btmac.sh
     oneshot
     disabled
 
+# Ril
+service vendor.imsrcsservice /vendor/bin/imsrcsd
+    class main
+    user radio
+    group radio vendor_qti_diag log inet wakelock
+    disabled
+
 # IRQs
 on property:vendor.post_boot.parsed=1
     # IRQ Tuning
