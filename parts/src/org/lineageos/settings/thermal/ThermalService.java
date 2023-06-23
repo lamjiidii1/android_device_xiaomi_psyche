@@ -42,7 +42,24 @@ public class ThermalService extends Service {
     private ThermalUtils mThermalUtils;
 
     private IActivityTaskManager mActivityTaskManager;
+    private final TaskStackListener mTaskListener = new TaskStackListener() {
+        @Override
+        public void onTaskStackChanged() {
+            try {
+                final RootTaskInfo info = mActivityTaskManager.getFocusedRootTaskInfo();
+                if (info == null || info.topActivity == null) {
+                    return;
+                }
 
+                String foregroundApp = info.topActivity.getPackageName();
+                if (!foregroundApp.equals(mPreviousApp)) {
+                    mThermalUtils.setThermalProfile(foregroundApp);
+                    mPreviousApp = foregroundApp;
+                }
+            } catch (Exception e) {
+            }
+        }
+    };
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -89,22 +106,4 @@ public class ThermalService extends Service {
         filter.addAction(Intent.ACTION_SCREEN_ON);
         this.registerReceiver(mIntentReceiver, filter);
     }
-
-    private final TaskStackListener mTaskListener = new TaskStackListener() {
-        @Override
-        public void onTaskStackChanged() {
-            try {
-                final RootTaskInfo info = mActivityTaskManager.getFocusedRootTaskInfo();
-                if (info == null || info.topActivity == null) {
-                    return;
-                }
-
-                String foregroundApp = info.topActivity.getPackageName();
-                if (!foregroundApp.equals(mPreviousApp)) {
-                    mThermalUtils.setThermalProfile(foregroundApp);
-                    mPreviousApp = foregroundApp;
-                }
-            } catch (Exception e) {}
-        }
-    };
 }

@@ -1,12 +1,12 @@
 /**
  * Copyright (C) 2020 The LineageOS Project
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 
 public class RefreshSettingsFragment extends PreferenceFragment
-    implements ApplicationsState.Callbacks {
+        implements ApplicationsState.Callbacks {
 
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
@@ -83,7 +83,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.refresh_layout, container, false);
     }
 
@@ -223,7 +223,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
         }
     }
 
-     private class ModeAdapter extends BaseAdapter {
+    private class ModeAdapter extends BaseAdapter {
 
         private final LayoutInflater inflater;
         private final int[] items = {
@@ -268,7 +268,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
         }
     }
 
-        private class AllPackagesAdapter extends RecyclerView.Adapter<ViewHolder>
+    private class AllPackagesAdapter extends RecyclerView.Adapter<ViewHolder>
             implements AdapterView.OnItemSelectedListener, SectionIndexer {
 
         private List<ApplicationsState.AppEntry> mEntries = new ArrayList<>();
@@ -288,14 +288,15 @@ public class RefreshSettingsFragment extends PreferenceFragment
         public long getItemId(int position) {
             return mEntries.get(position).id;
         }
-@NonNull
+
+        @NonNull
         @Override
-         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new ViewHolder(LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.refresh_list_item, parent, false));
         }
 
- 	@Override
+        @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             Context context = holder.itemView.getContext();
 
@@ -317,7 +318,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
         }
 
         private void setEntries(List<ApplicationsState.AppEntry> entries,
-                List<String> sections, List<Integer> positions) {
+                                List<String> sections, List<Integer> positions) {
             mEntries = entries;
             mSections = sections.toArray(new String[sections.size()]);
             mPositions = new int[positions.size()];
@@ -331,12 +332,12 @@ public class RefreshSettingsFragment extends PreferenceFragment
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             final ApplicationsState.AppEntry entry = (ApplicationsState.AppEntry) parent.getTag();
-            
+
             int currentState = mRefreshUtils.getStateForPackage(entry.info.packageName);
             if (currentState != position) {
                 mRefreshUtils.writePackage(entry.info.packageName, position);
                 notifyDataSetChanged();
-            }  
+            }
         }
 
         @Override
