@@ -64,11 +64,6 @@
         <fqname>@1.2::ISecureElement/SIM1</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.sensors</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::ISensors/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
         <transport>hwbinder</transport>
         <fqname>@2.3::ISoundTriggerHw/default</fqname>
@@ -283,4 +278,55 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IQspmhal/default</fqname>
     </hal>
+    <!-- Xiaomi Additions -->
+    <!-- Fingerprint -->
+    <hal format="hidl">
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IGoodixFingerprintDaemon</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.fingerprintextension</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IXiaomiFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- Sensors -->
+    <hal format="hidl">
+        <name>android.hardware.sensors</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- FX -->
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.fx.tunnel</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMiFxTunnel</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- Touchfeature -->
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.touchfeature</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITouchFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
 </manifest>
