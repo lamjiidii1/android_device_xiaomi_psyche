@@ -404,8 +404,8 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 
-# IMS (APK)
--system_ext/priv-app/ims/ims.apk
+# IMS (APK) - from patched source
+system_ext/priv-app/ims/ims.apk
 
 # IRQ balance
 vendor/bin/msm_irqbalance
