@@ -118,7 +118,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.primary.kona \
     audio.r_submix.default \
-    audio.usbv2.default \
+    audio.usb.default
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
@@ -141,10 +141,6 @@ PRODUCT_PACKAGES += \
     libspkrprot \
     libvisualizer \
     libvolumelistener
-
-# Audio configs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
