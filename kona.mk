@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Inherit virtual_ab_ota product
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -52,19 +55,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
-ifeq ($(TARGET_IS_VAB),true)
 VULKAN_DEQP_LEVEL := 2020-03-01
-else
-VULKAN_DEQP_LEVEL := 2019-03-01
-endif
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-$(VULKAN_DEQP_LEVEL).xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # A/B
-ifeq ($(TARGET_IS_VAB),true)
-# Inherit virtual_ab_ota product
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti \
     android.hardware.boot@1.1-impl-qti.recovery \
@@ -93,7 +89,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
-endif
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -242,12 +237,8 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
-
-ifneq ($(TARGET_IS_VAB),true)
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl.recovery
-endif
 
 # HIDL
 PRODUCT_PACKAGES += \
