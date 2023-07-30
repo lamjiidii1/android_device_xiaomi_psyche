@@ -223,14 +223,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
-ifeq ($(TARGET_HAS_UDFPS),true)
 PRODUCT_PACKAGES += \
     libudfpshandler
 
 PRODUCT_PACKAGES += \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
     vendor.xiaomi.hardware.touchfeature@1.0.vendor
-endif
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
