@@ -58,6 +58,33 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.voice.path.for.pcm.voip=true
+persist.vendor.audio.delta.refresh=true
+persist.vendor.audio.misound.disable=true
+ro.audio.monitorRotation=true
+ro.vendor.audio.gain.support=true
+ro.vendor.audio.karaok.support=true
+ro.vendor.audio.soundtrigger.appdefine.cnn.level=35
+ro.vendor.audio.soundtrigger.appdefine.gmm.level=55
+ro.vendor.audio.soundtrigger.appdefine.gmm.user.level=65
+ro.vendor.audio.soundtrigger.appdefine.vop.level=10
+ro.vendor.audio.soundtrigger.lowpower=true
+ro.vendor.audio.soundtrigger.snr=16
+ro.vendor.audio.soundtrigger=sva
+ro.vendor.audio.soundtrigger.training.level=50
+ro.vendor.audio.soundtrigger.xanzn.cnn.level=80
+ro.vendor.audio.soundtrigger.xanzn.gmm.level=45
+ro.vendor.audio.soundtrigger.xanzn.gmm.user.level=30
+ro.vendor.audio.soundtrigger.xanzn.vop.level=10
+ro.vendor.audio.soundtrigger.xatx.cnn.level=45
+ro.vendor.audio.soundtrigger.xatx.gmm.level=25
+ro.vendor.audio.soundtrigger.xatx.gmm.user.level=20
+ro.vendor.audio.soundtrigger.xatx.vop.level=-10
+ro.vendor.audio.spk.clean=true
+ro.vendor.audio.spk.stereo=true
+ro.vendor.audio.us.type=mius
+
+# Audio Volume Steps (Media)
+ro.config.media_vol_steps=16
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
@@ -126,6 +153,8 @@ vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
+ro.vendor.display.paneltype=2
+vendor.display.defer_fps_frame_count=2
 
 # DRM
 drm.service.enabled=true
@@ -222,6 +251,9 @@ persist.vendor.sensors.sync_request=true
 
 # Shutdown
 sys.vendor.shutdown.waittime=500
+
+# TouchFeature
+ro.vendor.touchfeature.type=183
 
 # USB
 vendor.usb.diag.func.name=diag

@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2021 The LineageOS Project
+// Copyright (C) 2023 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -20,6 +20,14 @@ cc_library_static {
     name: "init_xiaomi_kona",
     srcs: ["init_xiaomi_kona.cpp"],
     whole_static_libs: ["libinit_xiaomi_kona"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
+}
+
+cc_library_static {
+    name: "init_xiaomi_psyche",
+    srcs: ["init_xiaomi_psyche.cpp"],
+    whole_static_libs: ["//device/xiaomi/psyche:libinit_xiaomi_kona"],
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }
