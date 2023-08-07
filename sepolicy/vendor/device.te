@@ -4,4 +4,11 @@ type hall_device, dev_type;
 
 type lirc_device, dev_type;
 
+# Sound Device
 type sound_device, dev_type;
+
+# IR device
+type vendor_ir_spi_device, dev_type;
+
+# TouchFeature
+type touchfeature_device, dev_type;

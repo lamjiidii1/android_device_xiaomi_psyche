@@ -15,13 +15,16 @@
 # Charger
 /vendor/bin/batterysecret                                               u:object_r:batterysecret_exec:s0
 
+# Battery daemon
+/vendor/bin/batteryd                                                    u:object_r:batteryd_exec:s0
+
 # Display
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/dynamic_fps             u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/smart_fps_value         u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/thermal_hbm_disabled    u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/thermal_hbm_disabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/backlight/panel0-backlight/brightness 					  u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,msm-ext-disp/extcon/extcon0(/.*)?                                    u:object_r:vendor_sysfs_graphics:s0
@@ -41,10 +44,17 @@
 
 # UFS Devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/msadp                     u:object_r:vendor_efs_boot_dev:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/mdm1m9kefs[0-9]           u:object_r:vendor_efs_boot_dev:s0
 
 # Elliptic
 /dev/elliptic[0-9]                                                      u:object_r:ultrasound_device:s0
 /dev/mius(.*)?                                                          u:object_r:ultrasound_device:s0
+
+# Ultrasound Device
+/dev/elliptic(.*)?                           u:object_r:sound_device:s0
+
+# XLOG Device
+/dev/xlog                                    u:object_r:sound_device:s0
 
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2.3-service\.xiaomi                           u:object_r:hal_fingerprint_default_exec:s0
@@ -57,6 +67,9 @@
 /data/vendor/goodix(/.*)?                                               u:object_r:fingerprint_vendor_data_file:s0
 /data/vendor/fpc(/.*)?                                                  u:object_r:fingerprint_vendor_data_file:s0
 /data/vendor/fpdump(/.*)?                                               u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/gf_data(/.*)?                                              u:object_r:vendor_fingerprint_data_file:s0
+/mnt/vendor/persist/fpc(/.*)?                                           u:object_r:vendor_fingerprint_data_file:s0
+/mnt/vendor/persist/goodix(/.*)?                                        u:object_r:vendor_fingerprint_data_file:s0
 
 # Hexagon DSP-side executable needed for Halide operation
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
@@ -96,6 +109,9 @@
 /sys/devices/platform/us_prox.0/iio:device3(/.*)?                                                                               u:object_r:vendor_sysfs_iio:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:vadc@3100/iio:device1(/.*)?        u:object_r:vendor_sysfs_iio:s0
 
+# Sensor log data file
+/data/vendor/sensor_log(/.*)?                                             u:object_r:vendor_sensors_vendor_data_file:s0
+
 # SSR
 /sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:vendor_sysfs_ssr:s0
 
@@ -115,3 +131,14 @@
 # WiFi
 /vendor/bin/nv_mac                                                      u:object_r:vendor_wcnss_service_exec:s0
 /data/vendor/mac_addr(/.*)?                                             u:object_r:vendor_wifi_vendor_data_file:s0
+/data/vendor/wlan_logs(/.*)?                                            u:object_r:vendor_wifi_vendor_log_data_file:s0
+
+# xiaomi-touch: Palm sensor
+/sys/devices/virtual/touch/touch_dev/palm_sensor                                           u:object_r:vendor_sysfs_tp_virtual_prox:s0
+
+# udfps state node
+/sys/devices/virtual/touch/tp_dev/fp_state                                                 u:object_r:vendor_sysfs_sensors:s0
+
+# TouchFeature
+/dev/xiaomi-touch                                                        u:object_r:touchfeature_device:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.touchfeature@1\.0-service       u:object_r:hal_touchfeature_default_exec:s0
