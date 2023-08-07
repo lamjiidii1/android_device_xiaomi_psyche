@@ -881,9 +881,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 
-# IMS (APK) - from patched source
-system_ext/priv-app/ims/ims.apk
-
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
 vendor/firmware/ipa_fws.b00
