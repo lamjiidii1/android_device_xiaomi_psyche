@@ -521,7 +521,9 @@ vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc
 vendor/etc/charger_fstab.qti
 
 # Charger (Mi Turbo Charge)
+vendor/bin/batteryd
 vendor/bin/batterysecret
+vendor/etc/init/init.batteryd.rc
 vendor/etc/init/init.batterysecret.rc
 
 # CNE
@@ -1321,6 +1323,7 @@ vendor/bin/mi_thermald
 vendor/etc/init/init.mi_thermald.rc
 
 # Thermal config
+vendor/etc/perf/thermalboost.conf
 vendor/etc/thermal-4k.conf
 vendor/etc/thermal-8k.conf
 vendor/etc/thermal-camera.conf
