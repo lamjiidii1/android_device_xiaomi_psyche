@@ -112,8 +112,11 @@ vendor.voice.path.for.pcm.voip=true
 persist.vendor.audio.delta.refresh=true
 persist.vendor.audio.misound.disable=true
 ro.audio.monitorRotation=true
+ro.vendor.audio.enhance.support=false
 ro.vendor.audio.gain.support=true
 ro.vendor.audio.karaok.support=true
+ro.vendor.audio.ns.support=false
+ro.vendor.audio.sfx.audiovisual=false
 ro.vendor.audio.soundtrigger.appdefine.cnn.level=35
 ro.vendor.audio.soundtrigger.appdefine.gmm.level=55
 ro.vendor.audio.soundtrigger.appdefine.gmm.user.level=65
@@ -128,11 +131,13 @@ ro.vendor.audio.soundtrigger.xanzn.gmm.user.level=30
 ro.vendor.audio.soundtrigger.xanzn.vop.level=10
 ro.vendor.audio.soundtrigger.xatx.cnn.level=45
 ro.vendor.audio.soundtrigger.xatx.gmm.level=25
-ro.vendor.audio.soundtrigger.xatx.gmm.user.level=20
+ro.vendor.audio.soundtrigger.xatx.gmm.user.level=40
 ro.vendor.audio.soundtrigger.xatx.vop.level=-10
 ro.vendor.audio.spk.clean=true
 ro.vendor.audio.spk.stereo=true
 ro.vendor.audio.us.type=mius
+ro.vendor.audio.zoom.support=true
+ro.vendor.audio.zoom.type=1
 
 # Audio Volume Steps (Media)
 ro.config.media_vol_steps=16
