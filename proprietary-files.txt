@@ -18,6 +18,10 @@ vendor/lib/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 
+# ADSPRPC
+vendor/bin/loadalgo
+vendor/lib64/libloadalgo_stub.so
+
 # ADSP modules
 vendor/lib/rfsa/adsp/capi_v2_cirrus_sp.so
 vendor/lib/rfsa/adsp/capi_v2_dap_cpdp.so
