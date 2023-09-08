@@ -30,6 +30,19 @@
     <!-- Preferred max refresh rate at keyguard, if supported by the display. -->
     <integer name="config_keyguardMaxRefreshRate">60</integer>
 
+    <!-- Default rounded corner curve (a Bezier). Must match (the curved path in) rounded.xml.
+         Note that while rounded.xml includes the entire path (including the horizontal and vertical
+         corner edges), this pulls out just the curve.
+     -->
+    <string name="config_rounded_mask" translatable="false">M 0 0 L 0 167 C 0 167 0 147.1 2 127 C 4.751 99.418 10.766 63.206 37 37 C 67.958 6.076 108.965 0 167 0 L 0 0 Z</string>
+
+    <!-- Configure extra protection around the front-facing camera -->
+    <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">
+        M 500,52
+        a 35,35 0 1 0 82,0 35,35 0 1 0 -82,0
+        Z
+    </string>
+  
     <!--  ID for the camera that needs extra protection -->
     <string translatable="false" name="config_protectedCameraId">1</string>
 
