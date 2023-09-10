@@ -430,6 +430,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+PRODUCT_PACKAGES += \
+    sensors.xiaomi
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
