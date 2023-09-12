@@ -401,8 +401,12 @@ on property:sys.lmkd.memory.start_reclaim_in_capture=1
     write /sys/kernel/cam_reclaim/config "120 0 0 400000 1000 0 0 2000000000"
     write /sys/kernel/cam_reclaim/event 1
 
-#####copy megvii files#####
 on property:sys.boot_completed=1
+
+    #Hide selinux status 
+    chmod 0640 /sys/fs/selinux/enforce
+
+    #copy megvii files#####
     mkdir /data/vendor/camera/model 0777 cameraserver audio
     mkdir /data/vendor/camera/model/rt_model 0777 cameraserver audio
     copy /vendor/etc/camera/model/rt_model/preview_model /data/vendor/camera/model/rt_model/preview_model
