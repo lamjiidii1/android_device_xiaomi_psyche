@@ -73,6 +73,12 @@ EOF
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
             ;;
+        vendor/etc/init/init.batterysecret.rc)
+            sed -i "/seclabel/d" "${2}"
+            ;;
+        vendor/etc/init/init.mi_thermald.rc)
+            sed -i "/seclabel/d" "${2}"
+            ;;
     esac
 }
 
