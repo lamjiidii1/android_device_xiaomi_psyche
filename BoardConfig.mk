@@ -90,6 +90,9 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 TARGET_USES_FOD_ZPOS := true
 
+# Firmware
+-include vendor/xiaomi/psyche-firmware/BoardConfigVendor.mk
+
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(DEVICE_PATH):init_xiaomi_kona
 TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_kona
