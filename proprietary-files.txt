@@ -1,4 +1,4 @@
-# Unpinned blobs from Xiaomi/psyche_global/psyche:13/RKQ1.211001.001/V14.0.4.0.TLDMIXM:user/release-keys
+# Unpinned blobs from Xiaomi/psyche_global/psyche:13/RKQ1.211001.001/V14.0.5.0.TLDMIXM:user/release-keys
 
 # ACDB
 vendor/etc/acdbdata/Tutu/Tutu_Bluetooth_cal.acdb

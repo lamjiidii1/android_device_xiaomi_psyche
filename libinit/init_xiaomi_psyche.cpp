@@ -17,7 +17,7 @@ static const variant_info_t psyche_global_info = {
     .device = "psyche",
     .marketname = "Xiaomi 12X",
     .model = "2112123AG",
-    .build_fingerprint = "Xiaomi/psyche_global/psyche:13/RKQ1.211001.001/V14.0.4.0.TLDMIXM:user/release-keys",
+    .build_fingerprint = "Xiaomi/psyche_global/psyche:13/RKQ1.211001.001/V14.0.5.0.TLDMIXM:user/release-keys",
 
     .nfc = true,
 };
@@ -30,7 +30,7 @@ static const variant_info_t psyche_info = {
     .device = "psyche",
     .marketname = "Xiaomi 12X",
     .model = "2112123AG",
-    .build_fingerprint = "Xiaomi/psyche_global/psyche:13/RKQ1.211001.001/V14.0.4.0.TLDMIXM:user/release-keys",
+    .build_fingerprint = "Xiaomi/psyche_global/psyche:13/RKQ1.211001.001/V14.0.5.0.TLDMIXM:user/release-keys",
 
     .nfc = true,
 };
