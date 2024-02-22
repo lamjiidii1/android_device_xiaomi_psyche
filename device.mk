@@ -433,7 +433,7 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 PRODUCT_PACKAGES += \
-    sensors.xiaomi
+    sensors.udfps
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
